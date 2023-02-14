@@ -2,8 +2,8 @@ local M = {}
 
 M.config = function()
   lvim.builtin.which_key.mappings["H"] = " Help"
-  lvim.builtin.which_key.mappings["F"] = {
-      name = " Find",
+  lvim.builtin.which_key.mappings["f"] = {
+      name = "  Find",
       b = { "<cmd>lua require('user.telescope').builtin()<cr>", "Builtin" },
       f = { "<cmd>lua require('user.telescope').curbuf()<cr>", "Current Buffer" },
       g = { "<cmd>lua require('user.telescope').git_files()<cr>", "Git Files" },
