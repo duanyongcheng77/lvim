@@ -19,8 +19,8 @@ local function render(props)
   for idx, part in ipairs(parts) do
     if next(parts, idx) then
       vim.list_extend(result, {
-        { truncate(part, 20) },
-        { fmt(" %s ", ""), guifg = directory_color },
+          { truncate(part, 20) },
+          { fmt(" %s ", ""), guifg = directory_color },
       })
     else
       table.insert(result, { part, gui = "bold", guisp = directory_color })
@@ -38,28 +38,27 @@ M.config = function()
   end
 
   incl.setup {
-    window = {
-      zindex = 49,
-      winhighlight = {
-        inactive = {
-          Normal = "Directory",
-        },
+      window = {
+          zindex = 49,
+          winhighlight = {
+              inactive = {
+                  Normal = "Directory",
+              },
+          },
+          width = "fit",
+          padding = { left = 2, right = 1 },
+          placement = { vertical = "top", horizontal = "right" },
+          margin = {
+              horizontal = 0,
+          },
       },
-      width = "fit",
-      padding = { left = 2, right = 1 },
-      placement = { vertical = "top", horizontal = "right" },
-      margin = {
-        horizontal = 0,
+      hide = {
+          cursorline = false,
+          focused_win = true,
+          only_win = false,
       },
-    },
-    hide = {
-      cursorline = false,
-      focused_win = true,
-      only_win = false,
-    },
-    render = render,
+      render = render,
   }
 end
 
 return M
-
