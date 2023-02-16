@@ -21,6 +21,10 @@ M.config = function()
           end,
           enabled = lvim.builtin.motion_provider == "leap",
       },
+      -- 多光标插件
+      {
+          "mg979/vim-visual-multi"
+      },
       -- {
       --     "skywind3000/asynctasks.vim",
       --     dependencies = {
